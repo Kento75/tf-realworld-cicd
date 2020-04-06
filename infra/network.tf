@@ -3,16 +3,16 @@ locals {
 }
 
 module "vpc" {
-  source "./modules/vpc"
-  name = local.name
-  tags = local.tags
+  source = "./modules/vpc"
+  name   = local.name
+  tags   = local.tags
 }
 
 module "sg_alb" {
   source = "./modules/sg"
-  name = "${local.name}-alb"
+  name   = "${local.name}-alb"
   vpc_id = module.vpc.vpc_id
-  tags = local.tags
+  tags   = local.tags
   ingress = [
     {
       "cidr_blocks" : "0.0.0.0/0",

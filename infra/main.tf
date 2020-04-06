@@ -1,13 +1,13 @@
 provider "aws" {
   version = "~> 2.20"
-  regin   = "ap-northeast-1"
+  region  = "ap-northeast-1"
 }
 
 terraform {
-  requiredversion = ">=0.12"
+  required_version = ">=0.12"
 
   backend "s3" {
-    key   = "infra.tfstate"
-    regin = "ap-northeast-1"
+    key    = "infra.tfstate"
+    region = "ap-northeast-1"
   }
 }
